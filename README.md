@@ -38,7 +38,7 @@ Following the experimental setup in Section V-A, we conduct experiments on the p
 
 ```text
 SafeTDS/
-├── data/
+├── dataset/
 │   ├── RTP-Broad.jsonl
 │   └── RTP-Extreme.jsonl
 ```
