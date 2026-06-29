@@ -32,19 +32,22 @@ pip install -r requirements.txt
 Some backbones, such as LLaMA and Gemma, may require accepting model licenses and
 setting `HF_TOKEN`.
 
-## Data
+## Dataset
 
-The generation scripts expect:
+Following the experimental setup in Section V-A, we conduct experiments on the publicly available [RealToxicityPrompts **(RTP)**](https://huggingface.co/openai-community/gpt2-xl) dataset. The generation scripts expect the RTP data files to be organized as follows:
+
 ```text
 SafeTDS/
-├── dataset/
+├── data/
 │   ├── RTP-Broad.jsonl
 │   └── RTP-Extreme.jsonl
 ```
 
+where `RTP-Broad.jsonl` and `RTP-Extreme.jsonl` are the two evaluation subsets used in our experiments.
+
+
 Each file should contain a `prompt` object with a `text` field, matching the
 RealToxicityPrompts format used by the paper scripts.
-
 
 ## Models
 | Base Model                                      | HF Repo                                                                            |
