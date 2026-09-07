@@ -1,4 +1,4 @@
-# SafeTDS
+# DetoxTDS
 
 
 ## LLM detoxification
@@ -9,15 +9,15 @@ As illustrated in Figure 1, the goal of LLM detoxification is to steer generatio
 
 
 ## Method
-As illustrated in Figure 2, we propose SafeTDS, a training free trajectory-level dynamic sampling algorithm that performs
+As illustrated in Figure 2, we propose DetoxTDS, a training free trajectory-level dynamic sampling algorithm that performs
 parallelized trajectory sampling for LLM detoxification, our method consists of four main stages.
 
 ![Framework of the proposed language detoxification method](./assets/fig2.png)
-**Figure 2.**  The overall workflow of SafeTDS.
+**Figure 2.**  The overall workflow of DetoxTDS.
 
 
 ## Result
-Figure 3 provides an overview of the empirical trade-offs achieved by token-level baselines, sequence-level baselines, and our SafeTDS.
+Figure 3 provides an overview of the empirical trade-offs achieved by token-level baselines, sequence-level baselines, and our DetoxTDS.
 
 ![Framework of the proposed language detoxification method](./assets/fig3.png)
 **Figure 3.** Radar-chart comparison of Token-level, Sequence-level, and Ours across three base LLMs and their average results in the RTP-Extreme dataset. The
@@ -37,7 +37,7 @@ setting `HF_TOKEN`.
 Following the experimental setup in Section V-A, we conduct experiments on the publicly available [RealToxicityPrompts **(RTP)**](https://huggingface.co/openai-community/gpt2-xl) dataset. The generation scripts expect the RTP data files to be organized as follows:
 
 ```text
-SafeTDS/
+DetoxTDS/
 ├── dataset/
 │   ├── RTP-Broad.jsonl
 │   └── RTP-Extreme.jsonl
@@ -74,10 +74,10 @@ python run_base.py \
   --seed 717
 ```
 
-SafeTDS generation:
+DetoxTDS generation:
 
 ```bash
-python run_safetds.py \
+python run_detoxtds.py \
   --dataset RTP-Broad \
   --data_dir ./dataset \
   --filepath ./save_data \
